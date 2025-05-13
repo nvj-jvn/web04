@@ -1,0 +1,245 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+   line-height: 1;
+}
+ol, ul {
+   list-style: none;
+}
+blockquote, q {
+   quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+
+i {
+    pointer-events: none;
+}
+
+body {
+    font-family: Sono, "Zen Maru Gothic", monospace;
+    background: linear-gradient(90deg, #1E94A0, #91D4C2);
+}
+
+header {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input, button {
+        border: none;
+        padding: 0.25rem 0.5rem;
+        font-size: 1.75rem;
+        margin: 0.1rem;
+    }
+
+    input[type="number"] {
+        width: 100px;
+        text-align: center;
+    }
+
+    button {
+        cursor: pointer;
+        background-color: #004E6D;
+        color: white;
+        border-radius: 5px;
+    }
+
+    /* 隱藏數字上下按鈕 */
+    // Chrome, Safari, Edge, Opera
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    // Firefox
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+}
+
+div.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    button {
+        cursor: pointer;
+        background-color: #004E6D;
+        color: white;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        font-size: 1.75rem;
+        border-radius: 5px;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.todo {
+        width: 50vw;
+        display: flex;
+        align-items: center;
+        margin: 0.25rem 0;
+        transition: all 0.1s ease;
+
+        p {
+            background-color: white;
+            color: black;
+            padding: 0.25rem 0.5rem;
+            font-size: 1.75rem;
+        }
+    
+        p.todo-text {
+            width: 65%;
+        }
+    
+        p.todo-time {
+            width: 35%;
+            text-align: right;
+        }
+
+        button {
+            padding: 0.3rem 0.5rem;
+            font-size: 1.75rem;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button.complete {
+            border: 2px dashed #CDE9C7;
+            background-color: #7BC56A;
+        }
+
+        button.trash {
+            background-color: #DC2543;
+        }
+    }
+}
+
+.done {
+    opacity: 0.5;
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2rem;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleDown {
+    to {
+        transform: scale(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    input, button {
+        width: 70vw;
+        font-size: 1.25rem;
+    }
+
+    button {
+        width: 40vw;
+    }
+
+    input[type="number"] {
+        width: 100%;
+    }
+
+    section div.todo {
+        width: 70vw;
+        flex-direction: column;
+
+        p.todo-text {
+            width: 100%;
+        }
+        
+        p.todo-time {
+            width: 100%;
+            border-top: 1px  solid #91D4C2;
+        }
+
+        button {
+            width: 20%;
+            padding: 0.25rem;
+            margin-top: 0.25rem;
+        }
+    }
+
+    
+}
